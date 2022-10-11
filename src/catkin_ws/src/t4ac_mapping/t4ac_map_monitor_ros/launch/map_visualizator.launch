@@ -1,0 +1,5 @@
+<launch>
+    <arg name='map_name' default='Town03'/>
+
+    <node pkg="t4ac_map_monitor_ros" type="map_visualizator.py" name="map_visualizator_node" output="screen"/>
+</launch>

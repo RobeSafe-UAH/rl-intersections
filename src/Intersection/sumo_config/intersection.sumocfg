@@ -1,0 +1,11 @@
+<configuration>
+    <input>
+        <net-file value="intersection.net.xml"/>
+        <route-files value="intersection.rou.xml"/>
+        <gui-settings-file value="intersection.settings.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="10000000"/>
+    </time>
+</configuration>

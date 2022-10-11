@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/docker_robesafe/tesis/src/catkin_ws/devel/setup.sh

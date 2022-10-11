@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/robesafe/t4ac_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/robesafe/t4ac_ws/src/t4ac_carla_ros_bridge/pcl_recorder/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}

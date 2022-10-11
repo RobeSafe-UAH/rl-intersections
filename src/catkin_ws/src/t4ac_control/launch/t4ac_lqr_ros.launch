@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <arg name="simulation" default="true"/>
+
+  <!-- <node pkg="t4ac_lqr_ros" type="t4ac_graphics_control_ros_node" name="t4ac_graphics_control_ros_node">
+  </node> -->
+
+  <arg name="t4ac_lqr_ros_parameters" value="/t4ac/control/classic/t4ac_lqr_ros/t4ac_lqr_ros_node"/>
+  <group ns="$(arg t4ac_lqr_ros_parameters)">
+    <param name="real"        type="double"   value="0"/>      <!--vehicle (real=1)  carla simulatio (real=0) -->
+    <param name="N_max"       type="double"   value="500"/>    <!--Max. spline sectiones   max value=500 -->
+    <param name="min_dist"    type="double"   value="4"/>      <!--Min. distance between waypoints -->
+    <param name="rc_min"      type="double"   value="1.0"/>    <!--Min. curvature radius -->
+    <param name="n_ret_vel"   type="double"   value="4"/>      <!--Number of delays: Np + Nc -->
+    <param name="sample_time" type="double"   value="0.1"/>    <!--Sample time -->
+    <param name="v_max" type="double"   value="7
+    "/>    <!--Sample time -->
+    <param name="rc_max" type="double"   value="30"/>    <!--Sample time -->
+
+    <group if="$(eval simulation == true)">
+      <param name="q11"         type="double"   value="300"/>   <!--Q(1,1) LQR control -->
+      <param name="q22"         type="double"   value="0.0001"/> <!--Q(2,2) LQR control -->
+      <param name="r11"         type="double"   value="3500"/>   <!--R LQR control -->
+    </group>
+    
+    <group if="$(eval simulation == false)">
+      <param name="q11"         type="double"   value="340"/>    <!--Q(1,1) LQR control -->
+      <param name="q22"         type="double"   value="0.0001"/> <!--Q(2,2) LQR control -->
+      <param name="r11"         type="double"   value="3500"/>   <!--R LQR control -->
+    </group>
+  </group>
+  <node pkg="t4ac_lqr_ros" type="t4ac_lqr_ros_node" name="t4ac_lqr_ros_node" output="screen"/>
+</launch>

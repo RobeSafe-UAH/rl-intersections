@@ -1,0 +1,8 @@
+<launch>
+    <arg name='map_name' default='Town03'/>
+
+    <param name="/t4ac/mapping/maps/xodr" type="string" value="/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping/maps/xodr/"/>
+
+    <param name="t4ac/map_name" type="string" value="$(arg map_name)" />
+    <node pkg="t4ac_map_monitor_ros" type="map_visualizator_aux.py" name="map_visualizator_node" output="screen"/>
+</launch> 

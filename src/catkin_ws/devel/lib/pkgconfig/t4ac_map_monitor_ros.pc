@@ -1,0 +1,8 @@
+prefix=/home/docker_robesafe/tesis/src/catkin_ws/devel
+
+Name: t4ac_map_monitor_ros
+Description: Description of t4ac_map_monitor_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,275 @@
+"""
+Different odometry poses to publish manually in terminal and test
+functionallity of planner.
+"""
+
+# Road 7 right lane, middle of the road
+# (Warning here! road 2 must be inverted)
+
+rostopic pub /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 247.59, y: 36.59, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+
+# Road 3 right lane, middle of the road
+
+rostopic pub /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 149.72, y: 262.51, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Road 12
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 188.12, y: 116.57, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Road 19 exterior comienzo 
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 188.12, y: 116.57, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+
+#######
+CampusUAH_v1_4
+#######
+# Road 19 exterior comienzo 
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 184.57, y: 161.26, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Left lane
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 182.82, y: 159.04, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Ruta de rodri 
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: -374.2, y: 305.1, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Lane exterior road 45 (recta escribano)
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: -356.93, y: 318.27, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+# Road 2 (recta antes de stop)
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: -226.94, y: 328.62, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+
+# Town01 comienzo 
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 19.4, y: -2.0, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 
+
+
+
+# Town03 Principio rotonda 1 carril 
+
+rostopic pub -r 10 /t4ac/localization/pose nav_msgs/Odometry "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+child_frame_id: ''
+pose:
+  pose:
+    position: {x: 216.81, y: -59.0, z: 0.0}
+    orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+twist:
+  twist:
+    linear: {x: 0.0, y: 0.0, z: 0.0}
+    angular: {x: 0.0, y: 0.0, z: 0.0}
+  covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" 

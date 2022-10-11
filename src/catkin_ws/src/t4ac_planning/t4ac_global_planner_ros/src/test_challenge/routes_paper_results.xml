@@ -1,0 +1,18 @@
+<routes>
+   <route id="0" town="Town03">
+      <waypoint x="-4.70" y="88.46" z="0.0" />
+      <waypoint x="243.30" y="-135.93" z="0.0" />
+   </route>
+   <route id="1" town="Town10HD">
+      <waypoint x="-86.63" y="-27.18" z="0.5" />
+      <waypoint x="29.29" y="-131.09" z="0.0" />
+   </route>
+   <route id="2" town="CampusUAH">
+      <waypoint x="46.93" y="150.97" z="0.5" />
+      <waypoint x="73.75" y="339.15" z="0.0" />
+   </route>
+   <route id="3" town="Town03">
+      <waypoint x="-119.97" y="-136.68" z="0.0" />
+      <waypoint x="-63.71" y="-201.88" z="0.0" />
+   </route>
+</routes>

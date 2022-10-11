@@ -1,0 +1,8 @@
+prefix=/home/docker_robesafe/tesis/src/catkin_ws/install
+
+Name: t4ac_global_planner_ros
+Description: Description of t4ac_global_planner_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

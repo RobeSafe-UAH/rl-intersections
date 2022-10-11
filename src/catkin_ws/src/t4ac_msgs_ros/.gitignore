@@ -1,0 +1,20 @@
+devel/
+logs/
+build/
+bin/
+lib/
+msg_gen/
+srv_gen/
+msg/_*.py
+build_isolated/
+devel_isolated/
+
+# qcreator stuff
+CMakeLists.txt.user
+
+# Catkin
+CATKIN_IGNORE
+catkin_generated/
+
+# Visual studio code
+.vscode/
