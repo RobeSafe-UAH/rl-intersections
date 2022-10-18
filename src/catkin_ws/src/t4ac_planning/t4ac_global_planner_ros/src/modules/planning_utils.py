@@ -6,12 +6,17 @@ designed for the carla_challenge to work without the PythonAPI
 """
 import sys
 import math 
+import os
 
-sys.path.insert(0, '/home/robesafe/t4ac_ws/src/t4ac_architecture/t4ac_mapping_layer/map_utils')
-from builder_classes import T4ac_Waypoint
-from builder_classes import T4ac_Transform
-from builder_classes import T4ac_Location
-from builder_classes import T4ac_Rotation
+import git
+repo = git.Repo(os.path.dirname(os.path.realpath(__file__)), search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
+
+from src.catkin_ws.src.t4ac_mapping.map_utils.builder_classes import T4ac_Waypoint
+from src.catkin_ws.src.t4ac_mapping.map_utils.builder_classes import T4ac_Transform
+from src.catkin_ws.src.t4ac_mapping.map_utils.builder_classes import T4ac_Location
+from src.catkin_ws.src.t4ac_mapping.map_utils.builder_classes import T4ac_Rotation
 
 
 def euclidean_distance(wp1, wp2):

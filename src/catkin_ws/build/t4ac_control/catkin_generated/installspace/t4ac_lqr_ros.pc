@@ -1,8 +1,0 @@
-prefix=/home/docker_robesafe/tesis/src/catkin_ws/install
-
-Name: t4ac_lqr_ros
-Description: Description of t4ac_lqr_ros
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy std_msgs geometry_msgs nav_msgs t4ac_msgs tf

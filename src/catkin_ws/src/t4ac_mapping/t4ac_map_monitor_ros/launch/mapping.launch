@@ -1,7 +1,7 @@
 <launch>
     <arg name='map_name' default='Town03'/>
 
-    <param name="/t4ac/mapping/maps/xodr" type="string" value="/workspace/team_code/catkin_ws/src/t4ac_mapping_layer/maps/xodr/"/>
+    <param name="/t4ac/mapping/maps/xodr" type="string" value="/home/docker_robesafe/rl-intersections/src/catkin_ws/src/t4ac_mapping_layer/maps/xodr/"/>
 
     <param name="t4ac/map_name" type="string" value="$(arg map_name)" />
     <node pkg="t4ac_map_monitor_ros" type="map_visualizator.py" name="map_visualizator_node" output="screen"/>

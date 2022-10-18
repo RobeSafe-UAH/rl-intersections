@@ -3,7 +3,7 @@ import os
 import argparse
 from datetime import datetime
 
-from stable_baselines3 import DQN, PPO, A2C
+from stable_baselines3 import PPO, DDPG, A2C
 from stable_baselines3.common.monitor import Monitor
 
 from train_config import CustomCombinedExtractor, SaveOnBestTrainingRewardCallback
@@ -39,7 +39,11 @@ model_dir = os.path.join('Training', 'Models')
 save_path = os.path.join(model_dir, '{}_{}_{}'.format(args.env, args.model, datetime.now()))
 
 # Create the environment
-if args.env == "IntersectionFeatures":
+if args.env == "Intersection":
+    from Intersection.IntersectionSumoEnv import CustomEnv
+    policy_kwargs = net_arch=[dict(pi=[128, 128], vf=[128, 128])]
+    policy = "MlpPolicy"
+elif args.env == "IntersectionFeatures":
     from Intersection.IntersectionSumoEnvFeatures import CustomEnv
     policy_kwargs = dict(
     features_extractor_class=CustomCombinedExtractor,
@@ -53,25 +57,7 @@ elif args.env == "IntersectionCarlaFeatures":
     net_arch=[dict(pi=[128, 128], vf=[128, 128])]
     )   
     policy = "MultiInputPolicy"
-elif args.env == "Intersection":
-    from Intersection.IntersectionSumoEnv import CustomEnv
-    policy_kwargs = net_arch=[dict(pi=[128, 128], vf=[128, 128])]
-    policy = "MlpPolicy"
-elif args.env == "HighwayFeatures":
-    from Highway.HighwaySumoEnvFeatures import CustomEnv
-    policy_kwargs = dict(
-    features_extractor_class=CustomCombinedExtractor,
-    net_arch=[dict(pi=[128, 128], vf=[128, 128])]
-    )   
-    policy = "MultiInputPolicy"
-elif args.env == "DoubleIntersection":
-    from DoubleIntersection.DoubleIntersectionEnv import CustomEnv
-    policy_kwargs = net_arch=[dict(pi=[128, 128], vf=[128, 128])]
-    policy = "MlpPolicy"
-elif args.env == "HighwayCarla":
-    from HighwayCarla.HighwayCarlaEnv import CustomEnv
-    policy_kwargs = net_arch=[dict(pi=[128, 128], vf=[128, 128])]
-    policy = "MlpPolicy"
+
     
 env = CustomEnv(render=False)
 env = Monitor(env, model_dir)
@@ -89,11 +75,11 @@ if args.model == "PPO":
     else:
         model = PPO.load(os.path.join(model_dir, '{}_{}_'.format(args.env, args.model)), env=env)
 
-elif args.model == "DQN":
+elif args.model == "DDPG":
     if args.pretrained == "no":
-        model = DQN(policy, env, verbose = 1, tensorboard_log=log_dir)
+        model = DDPG(policy, env, verbose = 1, tensorboard_log=log_dir)
     else:
-        model = DQN.load(os.path.join(model_dir, '{}_{}_'.format(args.env, args.model)), env=env)
+        model = DDPG.load(os.path.join(model_dir, '{}_{}_'.format(args.env, args.model)), env=env)
 
 elif args.model == "A2C":
     if args.pretrained == "no":

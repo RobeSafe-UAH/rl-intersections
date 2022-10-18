@@ -13,19 +13,22 @@ The corresponding marker to the route calculated is also published to visualize
 the route in RVIZ.
 """
 import sys
+import os
 import rospy
 import networkx
-
 from tabulate import tabulate
-# sys.path.insert(0, '/workspace/team_code/catkin_ws/src/t4ac_planning_layer/')
-# from lane_graph_planner import LaneGraphPlanner
-from lane_graph_planner import LaneGraphPlanner
-sys.path.insert(0, '/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping')
-from map_parser import map_classes
-from map_parser import map_parser
-from map_utils import map_utils  
-from map_utils import builder_classes
-from modules import planning_utils
+
+import git
+repo = git.Repo(os.path.dirname(os.path.realpath(__file__)), search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
+
+from src.catkin_ws.src.t4ac_planning.t4ac_global_planner_ros.src.lane_graph_planner import LaneGraphPlanner
+from src.catkin_ws.src.t4ac_mapping.map_parser import map_classes
+from src.catkin_ws.src.t4ac_mapping.map_parser import map_parser
+from src.catkin_ws.src.t4ac_mapping.map_utils import map_utils  
+from src.catkin_ws.src.t4ac_mapping.map_utils import builder_classes
+from src.catkin_ws.src.t4ac_planning.t4ac_global_planner_ros.src.modules import planning_utils
 
 from nav_msgs.msg import Odometry
 from std_msgs.msg import Bool

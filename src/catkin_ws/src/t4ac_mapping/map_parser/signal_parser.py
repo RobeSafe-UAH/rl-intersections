@@ -9,11 +9,16 @@ That returns a list of signal dicts
 """
 
 import sys
+import os
 import math
+import git
 
-sys.path.insert(0, '/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping')
-from map_parser import map_parser
-from map_utils import map_utils
+repo = git.Repo('.', search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
+
+from src.catkin_ws.src.t4ac_mapping.map_parser.map_parser import map_utils
+from src.catkin_ws.src.t4ac_mapping.map_utils.map_utils import map_utils
 
 def parse_signals(map_data, map_flag):
     """
@@ -100,7 +105,7 @@ def calculate_signal_xyz(road, s, t, hOffset, height, orientation):
 
 
 
-root_path = "/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping/maps/xodr/"
+root_path = BASE_DIR + '/src/catkin_ws/src/t4ac_mapping/maps/xodr/'
 town_name = "carla_0910/Town01.xodr"
 map_path = root_path + town_name
 with open (map_path, "r") as myfile:

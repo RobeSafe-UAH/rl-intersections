@@ -6,8 +6,8 @@ Last mod: Alejandro D. 30/09/2021
 """
 import sys
 import math
+import os
 
-sys.path.insert(0, '/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping')
 from .map_classes import T4ac_Header
 from .map_classes import T4ac_Road
 from .map_classes import T4ac_Controller
@@ -30,8 +30,12 @@ from .map_classes import T4ac_LaneLinkJunction
 from .map_classes import T4ac_ControllerJunction
 from .map_classes import T4ac_VectorJunction
 
-sys.path.insert(0, '/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping')
-from map_utils.map_utils import generate_waypoints
+import git
+repo = git.Repo(os.path.dirname(os.path.realpath(__file__)), search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
+
+from src.catkin_ws.src.t4ac_mapping.map_utils.map_utils import generate_waypoints
 
 class MapParser:
 
@@ -62,7 +66,7 @@ class MapParser:
         Get xodr map that can be parsed as a txt file
         Each line is a different string in a list, so it can be easier to refer to an specific line
         """
-        xodr_path = "/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping/maps/xodr/"+map_name+".xodr"
+        xodr_path = BASE_DIR + '/src/catkin_ws/src/t4ac_mapping/maps/xodr/'+ map_name + '.xodr'
         with open(xodr_path, "r") as od_file:    
             xodr_map = od_file.readlines()
         return xodr_map 

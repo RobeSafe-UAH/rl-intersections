@@ -7,6 +7,11 @@ With that info calculate monitorized elements.
 import sys 
 import os
 import glob
+import git
+
+repo = git.Repo('.', search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
 
 try:
     sys.path.append(glob.glob('/home/robesafe/libraries/PythonAPI/carla/dist/carla-*%d.%d-%s.egg' % (
@@ -19,13 +24,13 @@ import carla
 import rospy
 import nav_msgs.msg
 
-from modules import monitor_classes
-from modules import route_module
-from modules import lanes_module
-from modules import util_module
-from modules import calculus_module
-from modules import monitor_module
-from modules import regElem_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import monitor_classes
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import route_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import lanes_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import util_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import calculus_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import monitor_module
+from src.catkin_ws.src.t4ac_mapping.t4ac_map_monitor_ros.src.modules import regElem_module
 import t4ac_msgs.msg
 
 
@@ -40,7 +45,7 @@ class MapMonitor:
     def __init__(self, map_name):
         # Map
         self.map_name = map_name 
-        maps_path = rospy.get_param("t4ac/mapping/maps/xodr")
+        maps_path = BASE_DIR + '/src/catkin_ws/src/t4ac_mapping/maps/xodr/'
         self.carla_map = util_module.get_map(maps_path, map_name)
         # Ego vehicle localization 
         self.segment_index = None

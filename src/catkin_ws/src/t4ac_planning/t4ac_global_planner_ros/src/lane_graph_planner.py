@@ -14,15 +14,20 @@ Each edge of the graph is composed by its road id and its lane id.
 This script has been reorganized in a class to be used in other scripts.
 """
 import sys
+import os
 import math 
 import networkx as nx
 import matplotlib.pyplot as plt 
 
-sys.path.insert(0, '/home/docker_robesafe/tesis/src/catkin_ws/src/t4ac_mapping')
-from map_parser import map_classes
-from map_parser import map_parser
-from map_utils import map_utils  
-from map_utils import builder_classes
+import git
+repo = git.Repo(os.path.dirname(os.path.realpath(__file__)), search_parent_directories=True)
+BASE_DIR = repo.working_tree_dir
+sys.path.append(BASE_DIR)
+
+from src.catkin_ws.src.t4ac_mapping.map_parser import map_classes
+from src.catkin_ws.src.t4ac_mapping.map_parser import map_parser
+from src.catkin_ws.src.t4ac_mapping.map_utils import map_utils  
+from src.catkin_ws.src.t4ac_mapping.map_utils import builder_classes
 
 class LaneGraphPlanner():
 

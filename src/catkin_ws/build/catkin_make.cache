@@ -1,2 +1,0 @@
-ros-carla-msgs:t4ac_control:t4ac_mapping/t4ac_map_monitor_ros:t4ac_msgs_ros:t4ac_planning/dummy_planner_ros:t4ac_planning/t4ac_global_planner_ros
--DCATKIN_DEVEL_PREFIX=/home/docker_robesafe/tesis/src/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/docker_robesafe/tesis/src/catkin_ws/install -G Unix Makefiles
